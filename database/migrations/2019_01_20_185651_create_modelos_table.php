@@ -15,6 +15,9 @@ class CreateModelosTable extends Migration
     {
         Schema::create('modelos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('marca_id')->unsigned()->index();
+            $table->foreign('marca_id')->references('id')->on('marcas')->onDelete('cascade');
+            $table->string('nombre');
             $table->timestamps();
         });
     }
