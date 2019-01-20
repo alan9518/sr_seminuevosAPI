@@ -8,7 +8,7 @@
     ** ========================================================================== */
 use Faker\Generator as Faker;
 
-$factory->define(App\Marca::class, function (Faker $faker) {
+$factory->define(App\Model\Marca::class, function (Faker $faker) {
     return [
         //
         'nombre' => $faker->text(50)

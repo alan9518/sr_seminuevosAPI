@@ -12,6 +12,6 @@ class MarcasTableSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\Marca::class,30)->create();
+        factory(App\Model\Marca::class,30)->create();
     }
 }

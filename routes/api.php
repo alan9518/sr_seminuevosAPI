@@ -29,25 +29,33 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     // --------------------------------------
     // List all Marcas Route
     // --------------------------------------
-        Route::get('marcas','MarcaController@index');
+    //     Route::get('marcas','MarcaController@index');
 
-    // --------------------------------------
-    // Get Single Marca
-    // --------------------------------------
-        Route::get('marca/{id}', 'MarcaController@show');
+    // // --------------------------------------
+    // // Get Single Marca
+    // // --------------------------------------
+    //     Route::get('marca/{id}', 'MarcaController@show');
 
-    // --------------------------------------
-    // Add a new Marca
-    // --------------------------------------
-        Route::post('marca', 'MarcaController@store');
+    // // --------------------------------------
+    // // Add a new Marca
+    // // --------------------------------------
+    //     Route::post('marca', 'MarcaController@store');
 
 
-    // --------------------------------------
-    // Edit Marca
-    // --------------------------------------
-        Route::put('marca/{id}', 'MarcaController@store');
+    // // --------------------------------------
+    // // Edit Marca
+    // // --------------------------------------
+    //     Route::put('marca/{id}', 'MarcaController@store');
 
-    // --------------------------------------
-    // Delete Marca
-    // --------------------------------------
-        Route::delete('marca/{id}','MarcaController@destroy');
+    // // --------------------------------------
+    // // Delete Marca
+    // // --------------------------------------
+    //     Route::delete('marca/{id}','MarcaController@destroy');
+
+    Route::apiResource('/marcas','MarcaController');
+    // Route::apiResource('/modelos', 'ModeloController');
+
+
+    Route::group(['prefix'=>'marcas'], function() {
+        Route::apiResource('/modelos', 'ModeloController');
+    });

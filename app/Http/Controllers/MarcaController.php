@@ -14,8 +14,10 @@ namespace App\Http\Controllers;
 // --------------------------------------
     use Illuminate\Http\Request;
     use App\Http\Requests;
-    use App\Marca; // Model
+    use App\Model\Marca; // Model
     use App\Http\Resources\Marca as MarcaResource; // Resource
+
+
 class MarcaController extends Controller
 {
     /**
